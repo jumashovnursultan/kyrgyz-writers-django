@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Статистика</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f5f0e8; color: #2c2c2c; }
+
+        header {
+            background: linear-gradient(135deg, #1a472a, #2d6a4f);
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        header a { color: white; text-decoration: none; font-size: 1.5em; }
+        header h1 { font-size: 1.4em; }
+
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+
+        .total-card {
+            background: linear-gradient(135deg, #1a472a, #2d6a4f);
+            color: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .total-card .number { font-size: 4em; font-weight: bold; }
+        .total-card p { font-size: 1.2em; opacity: 0.85; margin-top: 8px; }
+
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+        .section h2 {
+            color: #1a472a;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            border-left: 4px solid #2d6a4f;
+            padding-left: 12px;
+        }
+
+        .epoch-row { margin-bottom: 16px; }
+        .epoch-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 0.95em;
+        }
+        .epoch-label span:last-child { font-weight: bold; color: #2d6a4f; }
+        .bar-bg {
+            background: #e8f5e9;
+            border-radius: 10px;
+            height: 14px;
+            overflow: hidden;
+        }
+        .bar-fill {
+            background: linear-gradient(90deg, #2d6a4f, #52b788);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 28px;
+            background: #2d6a4f;
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-btn:hover { background: #1a472a; }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="{% url 'home' %}">←</a>
+    <h1>📊 Статистика</h1>
+</header>
+
+<div class="container">
+
+    <div class="total-card">
+        <div class="number">{{ total }}</div>
+        <p>Жазуучулардын жалпы саны</p>
+    </div>
+
+    <div class="section">
+        <h2>📅 Доор боюнча</h2>
+        {% for item in by_epoch %}
+        <div class="epoch-row">
+            <div class="epoch-label">
+                <span>{{ item.epoch }}</span>
+                <span>{{ item.count }} жазуучу</span>
+            </div>
+            <div class="bar-bg">
+                <div class="bar-fill" style="width: {% widthratio item.count total 100 %}%"></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <a href="{% url 'home' %}" class="back-btn">← Башкы бетке</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Django
+db.sqlite3
+media/
+
+# MacOS мусор
+.DS_Store
+__MACOSX/
+
+# Виртуальное окружение
+venv/
+env/
