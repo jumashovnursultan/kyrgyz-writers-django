@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Хронология</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f5f0e8; color: #2c2c2c; }
+
+        header {
+            background: linear-gradient(135deg, #1a472a, #2d6a4f);
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        header a { color: white; text-decoration: none; font-size: 1.5em; }
+        header h1 { font-size: 1.4em; }
+
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+
+        .timeline { position: relative; padding: 20px 0; }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #1a472a, #52b788);
+            transform: translateX(-50%);
+            border-radius: 4px;
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: calc(50% + 30px);
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: calc(50% + 30px);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            width: 16px;
+            height: 16px;
+            background: #f4a261;
+            border: 3px solid #1a472a;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .card {
+            background: white;
+            border-radius: 14px;
+            padding: 18px 20px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            max-width: 280px;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.2s;
+        }
+
+        .card:hover { transform: scale(1.03); }
+
+        .card .year {
+            font-size: 0.85em;
+            color: #e76f51;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .card h3 {
+            color: #1a472a;
+            font-size: 1em;
+            margin-bottom: 6px;
+        }
+
+        .card .epoch {
+            background: #e8f5e9;
+            color: #2d6a4f;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 28px;
+            background: #2d6a4f;
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .timeline::before { left: 20px; }
+            .timeline-item, .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+                padding-left: 50px;
+                padding-right: 0;
+            }
+            .timeline-item::after { left: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="{% url 'home' %}">←</a>
+    <h1>📅 Хронологиялык лента</h1>
+</header>
+
+<div class="container">
+    <div class="timeline">
+        {% for writer in writers %}
+        <div class="timeline-item">
+            <a href="{% url 'writer_detail' writer.pk %}" class="card">
+                <div class="year">
+                    {{ writer.birth_year }}
+                    {% if writer.death_year %} — {{ writer.death_year }}{% endif %}
+                </div>
+                <h3>{{ writer.name }}</h3>
+                <span class="epoch">{{ writer.epoch }}</span>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="{% url 'home' %}" class="back-btn">← Башкы бетке</a>
+</div>
+
+</body>
+</html>

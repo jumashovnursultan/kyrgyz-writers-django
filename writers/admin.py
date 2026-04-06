@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Writer, Quote
+from .models import Writer, Quote, Work
 
 @admin.register(Writer)
 class WriterAdmin(admin.ModelAdmin):
@@ -10,3 +10,9 @@ class WriterAdmin(admin.ModelAdmin):
 class QuoteAdmin(admin.ModelAdmin):
     list_display = ('writer', 'text')
     list_filter = ('writer',)
+
+@admin.register(Work)
+class WorkAdmin(admin.ModelAdmin):
+    list_display = ('title', 'writer', 'year', 'genre')
+    list_filter = ('writer', 'genre')
+    search_fields = ('title',)

@@ -215,8 +215,40 @@
     {% endif %}
 </div>
 
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+    <div style="padding: 1.5rem 0; background: #f0ebe0; border-top: 1px solid #ddd6c8;">
+        <p style="font-size: 11px; font-weight: 600; color: #888; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; text-align: center;">Алфавит боюнча</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; align-items: center;">
+            <a href="{% url 'home' %}" style="
+                padding: 7px 16px;
+                background: {% if not selected_letter %}#1a472a{% else %}white{% endif %};
+                color: {% if not selected_letter %}white{% else %}#1a472a{% endif %};
+                border-radius: 8px;
+                text-decoration: none;
+                font-size: 13px;
+                font-weight: 600;
+                border: 1.5px solid #1a472a;
+            ">Баары</a>
+
+            <div style="width: 1px; height: 28px; background: #c8c0b0; margin: 0 4px;"></div>
+
+            {% for letter in letters %}
+            <a href="?letter={{ letter }}" style="
+                padding: 7px 12px;
+                background: {% if selected_letter == letter %}#1a472a{% else %}white{% endif %};
+                color: {% if selected_letter == letter %}white{% else %}#1a472a{% endif %};
+                border-radius: 8px;
+                text-decoration: none;
+                font-size: 13px;
+                font-weight: 600;
+                border: 1.5px solid #1a472a;
+            ">{{ letter }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 <footer>
-    <p>© 2025 Кыргыз жазуучулары — Дипломдук жумуш</p>
+    <p>© 2026 Кыргыз жазуучулары — Дипломдук жумуш</p>
     <div style="text-align:center; margin-top: 20px;">
     <a href="{% url 'statistics' %}" style="
         padding: 10px 24px;
@@ -226,6 +258,24 @@
         text-decoration: none;
         font-weight: bold;
     ">📊 Статистика</a>
+    <a href="{% url 'timeline' %}" style="
+    padding: 10px 24px;
+    background: #e76f51;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+">📅 Хронология</a>
+<a href="{% url 'about' %}" style="
+    padding: 10px 24px;
+    background: #457b9d;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+">ℹ️ Долбоор жөнүндө</a>
 </div>
 </footer>
 

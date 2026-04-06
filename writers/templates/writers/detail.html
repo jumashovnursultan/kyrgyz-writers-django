@@ -189,18 +189,47 @@
         <p>{{ writer.biography|linebreaks }}</p>
     </div>
 
-    <div class="section">
-        <h2>📚 Чыгармалары</h2>
-        <ul class="works-list">
-            {% for work in writer.works.splitlines %}
-                {% if work %}
-                <li>{{ work }}</li>
+    {% if writer.work_set.all %}
+<div class="section">
+    <h2>📚 Чыгармалары</h2>
+    <div style="display: flex; flex-direction: column; gap: 0; margin-top: 10px;">
+        {% for work in writer.work_set.all %}
+        <div style="
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid #f0f0f0;
+        ">
+            <span style="font-size: 1.3em; flex-shrink: 0; margin-top: 2px;">📖</span>
+            <div style="flex: 1;">
+                <div style="font-weight: bold; color: #1a472a; font-size: 1em; margin-bottom: 4px;">{{ work.title }}</div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 4px;">
+                    {% if work.year %}
+                    <span style="font-size: 0.82em; color: #888;">{{ work.year }}-жыл</span>
+                    {% endif %}
+                    {% if work.genre %}
+                    <span style="
+                        background: #e8f5e9;
+                        color: #2d6a4f;
+                        padding: 2px 10px;
+                        border-radius: 20px;
+                        font-size: 0.78em;
+                        font-weight: bold;
+                    ">{{ work.genre }}</span>
+                    {% endif %}
+                </div>
+                {% if work.description %}
+                <div style="font-size: 0.88em; color: #555; line-height: 1.6;">{{ work.description }}</div>
                 {% endif %}
-            {% endfor %}
-        </ul>
+            </div>
+        </div>
+        {% endfor %}
     </div>
+</div>
+{% endif %}
 
-    <a href="{% url 'home' %}" class="back-btn">← Артка кайтуу</a>
+    
     {% if writer.quotes.all %}
 <div class="section">
     <h2>💬 Цитаталары</h2>
@@ -220,6 +249,7 @@
     </blockquote>
     {% endfor %}
 </div>
+<a href="{% url 'home' %}" class="back-btn">← Артка кайтуу</a>
 {% endif %}
     <button onclick="window.print()" style="
     display: inline-block;
