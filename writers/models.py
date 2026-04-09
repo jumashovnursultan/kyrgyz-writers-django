@@ -16,16 +16,7 @@ class Writer(models.Model):
         verbose_name = "Писатель"
         verbose_name_plural = "Писатели"
 
-class Quote(models.Model):
-    writer = models.ForeignKey(Writer, on_delete=models.CASCADE, related_name='quotes', verbose_name="Жазуучу")
-    text = models.TextField(verbose_name="Цитата")
 
-    def __str__(self):
-        return f"{self.writer.name}: {self.text[:50]}"
-
-    class Meta:
-        verbose_name = "Цитата"
-        verbose_name_plural = "Цитаталар"
 
 class Quote(models.Model):
     writer = models.ForeignKey(Writer, on_delete=models.CASCADE, related_name='quotes', verbose_name="Жазуучу")
