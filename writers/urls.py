@@ -10,5 +10,6 @@ urlpatterns = [
     path('timeline/', views.timeline, name='timeline'),
 path('about/', views.about, name='about'),
 
-
 ]
+
+

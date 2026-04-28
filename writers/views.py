@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Writer, Quote, Work
-
 import random
 
 
@@ -60,3 +59,6 @@ def about(request):
         'total_works': total_works,
         'total_quotes': total_quotes,
     })        
+
+
+    
