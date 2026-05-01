@@ -15,33 +15,32 @@ def home(request):
     language = request.GET.get('language', '')
     genre = request.GET.get('genre', '')
 
-    writers = Writer.objects.all()
+    writers = list(Writer.objects.all())
 
-    # Умный поиск — по имени, биографии, тегам
-if query:
-    q = query.lower()
-    writers = [w for w in writers if
-               q in w.name.lower() or
-               q in w.biography.lower() or
-               q in w.tags.lower()]
+    if query:
+        q = query.lower()
+        writers = [w for w in writers if
+                   q in w.name.lower() or
+                   q in w.biography.lower() or
+                   q in w.tags.lower()]
 
     if epoch:
-        writers = writers.filter(epoch__icontains=epoch)
+        writers = [w for w in writers if epoch.lower() in w.epoch.lower()]
 
     if letter:
-        writers = writers.filter(name__istartswith=letter)
+        writers = [w for w in writers if w.name.startswith(letter)]
 
     if language:
-        writers = writers.filter(language=language)
+        writers = [w for w in writers if w.language == language]
 
     if genre:
-        writers = writers.filter(work_set__genre__icontains=genre).distinct()
+        genre_ids = set(Work.objects.filter(genre__icontains=genre).values_list('writer_id', flat=True))
+        writers = [w for w in writers if w.pk in genre_ids]
 
     epochs = Writer.objects.values_list('epoch', flat=True).distinct()
     genres = Work.objects.values_list('genre', flat=True).distinct().exclude(genre='')
     letters = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
 
-    # Для авторизованного пользователя — список его избранных id
     favorite_ids = set()
     if request.user.is_authenticated:
         favorite_ids = set(
@@ -65,7 +64,6 @@ if query:
 def writer_detail(request, pk):
     writer = get_object_or_404(Writer, pk=pk)
 
-    # Похожие авторы: та же эпоха или общий жанр, не сам писатель
     writer_genres = writer.work_set.values_list('genre', flat=True)
     similar = Writer.objects.exclude(pk=writer.pk).filter(
         Q(epoch=writer.epoch) |
