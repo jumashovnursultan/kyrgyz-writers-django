@@ -1,71 +1,227 @@
 [
-{"model": "writers.writer", "pk": 1, "fields": {"name": "Чыңгыз Айтматов", "birth_year": 1928, "death_year": 2008, "biography": "Чыңгыз Төрөкулович Айтматов — кыргыз жана орус тилдеринде жазган улуу жазуучу. Ал Талас облусунун Шекер айылында туулган. Анын чыгармалары 170дан ашык тилге которулган жана дүйнө жүзү боюнча миллиондогон окурмандарга белгилүү. Айтматов адамдын жаратылышка болгон мамилесин, сүйүүнү жана согуштун трагедиясын терең чагылдырган.", "works": "Жамийла\r\nАк кеме\r\nГүлсарат\r\nКылым карытар бир күн\r\nПлаха", "photo": "", "epoch": "XX кылым"}},
-{"model": "writers.writer", "pk": 2, "fields": {"name": "Токтогул Сатылганов", "birth_year": 1864, "death_year": 1933, "biography": "Токтогул Сатылганов — кыргыздын улуу акыны жана комузчусу. Ал Кетмен-Төбө өрөөнүндө туулган. Токтогул элдин турмушун, азаптарын жана кубанычтарын комуз менен ырда чагылдырган. Ал эл акындарынын эң көрүнүктүүсү болуп саналат.", "works": "Зар заман\r\nСынган кылыч\r\nЭлге арноо", "photo": "", "epoch": "XIX-XX кылым"}},
-{"model": "writers.writer", "pk": 3, "fields": {"name": "Алыкул Осмонов", "birth_year": 1915, "death_year": 1950, "biography": "Алыкул Осмонов — кыргыз поэзиясынын классиги. Ал Ысык-Көл облусунда туулган. Кыска өмүрүнө карабастан, кыргыз адабиятына зор салым кошкон. Анын ырлары табияттын сулуулугун, мекен сүйүүнү жана адамдын ички дүйнөсүн чагылдырат.", "works": "Ала-Тоо\r\nМекен\r\nЖаштык\r\nСагыныч", "photo": "", "epoch": "XX кылым"}},
-{"model": "writers.writer", "pk": 4, "fields": {"name": "Молдо Кылыч", "birth_year": 1866, "death_year": 1917, "biography": "Молдо Кылыч Шамырканов — кыргыз акыны жана жазуучусу. Ал Ош облусунда туулган. Молдо Кылыч кыргыз адабиятында жазма поэзиянын негизин салган акындардын бири. Анын чыгармалары элдин тарыхын, салт-санаасын жана руханий дүйнөсүн чагылдырат.", "works": "Зилзала\r\nКыргыз тарыхы\r\nМаданият жөнүндө", "photo": "", "epoch": "XIX-XX кылым"}},
-{"model": "writers.writer", "pk": 5, "fields": {"name": "Аалы Токомбаев", "birth_year": 1904, "death_year": 1988, "biography": "Аалы Токомбаев — кыргыз совет адабиятынын негизин салуучулардын бири. Ал Чүй облусунда туулган. Токомбаев акын, жазуучу жана коомдук ишмер катары кыргыз маданиятынын өнүгүүсүнө чоң салым кошкон. Анын ырлары жана прозалык чыгармалары кыргыз адабиятынын алтын фондуна кирет.", "works": "Кандуу жылдар\r\nАкыйкат\r\nТаң атканда\r\nЖаңы жол", "photo": "", "epoch": "XX кылым"}},
-{"model": "writers.writer", "pk": 6, "fields": {"name": "Касымалы Баялинов", "birth_year": 1902, "death_year": 1979, "biography": "Касымалы Баялинов — кыргыз прозасынын атасы деп аталган улуу жазуучу. Ал Нарын облусунда туулган. Анын 'Аjар' аттуу повести кыргыз тилинде жазылган алгачкы чыгармалардын бири болуп саналат. Баялинов кыргыз адабиятынын калыптанышына зор салым кошкон.", "works": "Ажар\r\nКоопсуз кадам\r\nЖеңиш\r\nТаалай", "photo": "", "epoch": "XX кылым"}},
-{"model": "writers.writer", "pk": 7, "fields": {"name": "Тугелбай Сыдыкбеков", "birth_year": 1912, "death_year": 1997, "biography": "Тугелбай Сыдыкбеков — кыргыз адабиятынын көрүнүктүү өкүлү, романист. Ал Ысык-Көл облусунда туулган. Анын романдары кыргыз элинин турмушун, тарыхын жана маданиятын кеңири чагылдырат. СССР Мамлекеттик сыйлыгынын лауреаты.", "works": "Биздин замандын кишилери\r\nТоо балдары\r\nКен суу\r\nАт үстүндө өткөн өмүр", "photo": "", "epoch": "XX кылым"}},
-{"model": "writers.writer", "pk": 8, "fields": {"name": "Суйунбай Эралиев", "birth_year": 1921, "death_year": 2007, "biography": "Суйунбай Эралиев — кыргыз поэзиясынын корифейи. Ал Чүй облусунда туулган. Анын ырлары лирикалык тереңдиги жана табигый сулуулугу менен айырмаланат. Эралиев кыргыз поэзиясын дүйнөлүк деңгээлге чыгарган акындардын бири.", "works": "Ысык-Көл\r\nМенин Ала-Тоом\r\nСүйүү\r\nЖер жана асман", "photo": "", "epoch": "XX кылым"}},
-{"model": "writers.writer", "pk": 9, "fields": {"name": "Мар Байджиев", "birth_year": 1935, "death_year": 2020, "biography": "Мар Байджиев — кыргыз драматургиясынын өкүлү, жазуучу жана коомдук ишмер. Ал Фрунзе шаарында туулган. Анын пьесалары Кыргызстандын театрларында узак жылдар бою коюлган. Байджиев кыргыз маданиятынын жана искусствосунун өнүгүүсүнө зор салым кошкон.", "works": "Материнское поле\r\nБоз үй\r\nМекен\r\nАпам жөнүндө жомок", "photo": "", "epoch": "XX кылым"}},
-{"model": "writers.writer", "pk": 10, "fields": {"name": "Шукурбек Бейшеналиев", "birth_year": 1928, "death_year": 1994, "biography": "Шукурбек Бейшеналиев — кыргыз акыны жана котормочу. Ал Талас облусунда туулган. Анын ырлары жана поэмалары кыргыз поэзиясынын өнүгүүсүнө салым кошкон. Дүйнөлүк адабияттын көптөгөн чыгармаларын кыргыз тилине которгон.", "works": "Жүрөктүн үнү\r\nТалас\r\nАна тил\r\nЖаштык жылдары", "photo": "", "epoch": "XX кылым"}},
-{"model": "writers.writer", "pk": 11, "fields": {"name": "Молдо Нияз", "birth_year": 1823, "death_year": 1896, "biography": "Молдо Нияз — XIX кылымда жашаган кыргыз акыны. Ал Ош облусунун Алай районунда туулган. Молдо Нияз кыргыз жазма адабиятынын алгачкы өкүлдөрүнүн бири. Анын чыгармаларында эл турмушу, тарыхый окуялар жана акылмандык ойлор чагылдырылган.", "works": "Тарых ырлары\r\nНасыят\r\nАйтыш", "photo": "", "epoch": "XIX кылым"}},
-{"model": "writers.writer", "pk": 12, "fields": {"name": "Жоомарт Бөкөнбаев", "birth_year": 1910, "death_year": 1944, "biography": "Жоомарт Бөкөнбаев — кыргыз советтик поэзиясынын өкүлү. Ал Чүй облусунда туулган. Улуу Ата Мекендик согушта каза болгон. Анын ырлары романтикалуу руху жана мекен сүйүүчүлүгү менен айырмаланат. Кыска өмүрүндө кыргыз адабиятына баалуу мурас калтырган.", "works": "Ала-Тоо\r\nМайдан\r\nЖеңиш үчүн\r\nАска таш", "photo": "", "epoch": "XX кылым"}},
-{"model": "writers.writer", "pk": 13, "fields": {"name": "Казат Акматов", "birth_year": 1941, "death_year": 2021, "biography": "Казат Акматов — кыргыз прозачысы жана коомдук ишмер. Ал Нарын облусунда туулган. Анын романдары жана аңгемелери психологиялык тереңдиги менен айырмаланат. Кыргызстандын Эл жазуучусу наамын алган.", "works": "Үч доор\r\nТагдыр\r\nАзаптуу жол\r\nКайтуу", "photo": "", "epoch": "XX кылым"}},
-
-{"model": "writers.quote", "pk": 1, "fields": {"writer": 1, "text": "Адам өлөт, бирок анын сөзү өлбөйт."}},
-{"model": "writers.quote", "pk": 2, "fields": {"writer": 1, "text": "Эң чоң байлык — акылман достун болушу."}},
-{"model": "writers.quote", "pk": 3, "fields": {"writer": 1, "text": "Жашоо — бул күрөш, бирок ал сулуу күрөш."}},
-{"model": "writers.quote", "pk": 4, "fields": {"writer": 1, "text": "Адамга эң кыйыны — күн сайын адам болуу."}},
-{"model": "writers.quote", "pk": 5, "fields": {"writer": 2, "text": "Ырыс алды — ынтымак."}},
-{"model": "writers.quote", "pk": 6, "fields": {"writer": 2, "text": "Күчүң барда иштеп көн."}},
-{"model": "writers.quote", "pk": 7, "fields": {"writer": 2, "text": "Өтүп кеткен ишиңдин артынан бекер өкүнбө."}},
-{"model": "writers.quote", "pk": 8, "fields": {"writer": 3, "text": "Мен кыргызмын, миң жашаган элмин."}},
-{"model": "writers.quote", "pk": 9, "fields": {"writer": 3, "text": "Өмүр өтөт, из калат."}},
-{"model": "writers.quote", "pk": 10, "fields": {"writer": 3, "text": "Сүйгөн жүрөк өлбөйт."}},
-{"model": "writers.quote", "pk": 11, "fields": {"writer": 4, "text": "Калем — акындын куралы, сөз — анын күчү."}},
-{"model": "writers.quote", "pk": 12, "fields": {"writer": 4, "text": "Тарых — элдин эс тутуму."}},
-{"model": "writers.quote", "pk": 13, "fields": {"writer": 5, "text": "Адабият — элдин жаны."}},
-{"model": "writers.quote", "pk": 14, "fields": {"writer": 5, "text": "Жазуучунун милдети — чындыкты айтуу."}},
-{"model": "writers.quote", "pk": 15, "fields": {"writer": 6, "text": "Сөз — алтын, унчукпагандык — күмүш."}},
-{"model": "writers.quote", "pk": 16, "fields": {"writer": 7, "text": "Элдин тарыхын билбеген — өз тамырынан ажыраган."}},
-{"model": "writers.quote", "pk": 17, "fields": {"writer": 7, "text": "Жазуучу өз элинин кейпин тартат."}},
-{"model": "writers.quote", "pk": 18, "fields": {"writer": 8, "text": "Ысык-Көл — менин жүрөгүм, Ала-Тоо — менин рухум."}},
-{"model": "writers.quote", "pk": 19, "fields": {"writer": 8, "text": "Поэзия — жүрөктүн тили."}},
-{"model": "writers.quote", "pk": 20, "fields": {"writer": 9, "text": "Театр — элдин күзгүсү."}},
-{"model": "writers.quote", "pk": 21, "fields": {"writer": 10, "text": "Ана тил — эң сулуу тил."}},
-{"model": "writers.quote", "pk": 22, "fields": {"writer": 11, "text": "Акылман сөз — дарыя, жакмак сөз — булак."}},
-{"model": "writers.quote", "pk": 23, "fields": {"writer": 12, "text": "Мекен үчүн өлүм — даңк."}},
-{"model": "writers.quote", "pk": 24, "fields": {"writer": 13, "text": "Адам өз тагдырынын кожоюну."}},
-
-{"model": "writers.work", "pk": 1, "fields": {"writer": 1, "title": "Жамийла", "year": 1958, "genre": "Повесть"}},
-{"model": "writers.work", "pk": 2, "fields": {"writer": 1, "title": "Ак кеме", "year": 1970, "genre": "Повесть"}},
-{"model": "writers.work", "pk": 3, "fields": {"writer": 1, "title": "Гүлсарат", "year": 1966, "genre": "Повесть"}},
-{"model": "writers.work", "pk": 4, "fields": {"writer": 1, "title": "Кылым карытар бир күн", "year": 1980, "genre": "Роман"}},
-{"model": "writers.work", "pk": 5, "fields": {"writer": 1, "title": "Плаха", "year": 1986, "genre": "Роман"}},
-{"model": "writers.work", "pk": 6, "fields": {"writer": 2, "title": "Зар заман", "year": 1900, "genre": "Поэма"}},
-{"model": "writers.work", "pk": 7, "fields": {"writer": 2, "title": "Сынган кылыч", "year": 1905, "genre": "Поэма"}},
-{"model": "writers.work", "pk": 8, "fields": {"writer": 3, "title": "Ала-Тоо", "year": 1940, "genre": "Ыр"}},
-{"model": "writers.work", "pk": 9, "fields": {"writer": 3, "title": "Мекен", "year": 1942, "genre": "Поэма"}},
-{"model": "writers.work", "pk": 10, "fields": {"writer": 3, "title": "Жаштык", "year": 1945, "genre": "Ыр жыйнагы"}},
-{"model": "writers.work", "pk": 11, "fields": {"writer": 4, "title": "Зилзала", "year": 1911, "genre": "Поэма"}},
-{"model": "writers.work", "pk": 12, "fields": {"writer": 4, "title": "Кыргыз тарыхы", "year": 1913, "genre": "Поэма"}},
-{"model": "writers.work", "pk": 13, "fields": {"writer": 5, "title": "Кандуу жылдар", "year": 1934, "genre": "Роман"}},
-{"model": "writers.work", "pk": 14, "fields": {"writer": 5, "title": "Таң атканда", "year": 1938, "genre": "Повесть"}},
-{"model": "writers.work", "pk": 15, "fields": {"writer": 6, "title": "Ажар", "year": 1928, "genre": "Повесть"}},
-{"model": "writers.work", "pk": 16, "fields": {"writer": 6, "title": "Коопсуз кадам", "year": 1935, "genre": "Роман"}},
-{"model": "writers.work", "pk": 17, "fields": {"writer": 7, "title": "Биздин замандын кишилери", "year": 1952, "genre": "Роман"}},
-{"model": "writers.work", "pk": 18, "fields": {"writer": 7, "title": "Тоо балдары", "year": 1947, "genre": "Повесть"}},
-{"model": "writers.work", "pk": 19, "fields": {"writer": 7, "title": "Кен суу", "year": 1955, "genre": "Роман"}},
-{"model": "writers.work", "pk": 20, "fields": {"writer": 8, "title": "Ысык-Көл", "year": 1950, "genre": "Поэма"}},
-{"model": "writers.work", "pk": 21, "fields": {"writer": 8, "title": "Менин Ала-Тоом", "year": 1955, "genre": "Ыр жыйнагы"}},
-{"model": "writers.work", "pk": 22, "fields": {"writer": 9, "title": "Боз үй", "year": 1965, "genre": "Пьеса"}},
-{"model": "writers.work", "pk": 23, "fields": {"writer": 9, "title": "Мекен", "year": 1970, "genre": "Пьеса"}},
-{"model": "writers.work", "pk": 24, "fields": {"writer": 10, "title": "Жүрөктүн үнү", "year": 1958, "genre": "Ыр жыйнагы"}},
-{"model": "writers.work", "pk": 25, "fields": {"writer": 10, "title": "Ана тил", "year": 1965, "genre": "Поэма"}},
-{"model": "writers.work", "pk": 26, "fields": {"writer": 11, "title": "Зилзала", "year": 1897, "genre": "Поэма"}},
-{"model": "writers.work", "pk": 27, "fields": {"writer": 12, "title": "Ала-Тоо", "year": 1942, "genre": "Поэма"}},
-{"model": "writers.work", "pk": 28, "fields": {"writer": 12, "title": "Майдан", "year": 1943, "genre": "Ыр"}},
-{"model": "writers.work", "pk": 29, "fields": {"writer": 13, "title": "Үч доор", "year": 1975, "genre": "Роман"}},
-{"model": "writers.work", "pk": 30, "fields": {"writer": 13, "title": "Тагдыр", "year": 1980, "genre": "Повесть"}}
+{
+  "model": "writers.writer",
+  "pk": 1,
+  "fields": {
+    "name": "Чыңгыз Айтматов",
+    "birth_year": 1928,
+    "death_year": 2008,
+    "biography": "Чыңгыз Төрөкулович Айтматов — кыргыз жана орус тилдеринде жазган улуу жазуучу. Ал Талас облусунун Шекер айылында туулган. Анын чыгармалары 170дан ашык тилге которулган жана дүйнө жүзү боюнча миллиондогон окурмандарга белгилүү. Айтматов адамдын жаратылышка болгон мамилесин, сүйүүнү жана согуштун трагедиясын терең чагылдырган.",
+    "photo": "photos/unnamed.jpg",
+    "epoch": "XX кылым",
+    "language": "kyrgyz",
+    "tags": ""
+  }
+},
+{
+  "model": "writers.writer",
+  "pk": 2,
+  "fields": {
+    "name": "Токтогул Сатылганов",
+    "birth_year": 1864,
+    "death_year": 1933,
+    "biography": "Токтогул Сатылганов — кыргыздын улуу акыны жана комузчусу. Ал Кетмен-Төбө өрөөнүндө туулган. Токтогул элдин турмушун, азаптарын жана кубанычтарын комуз менен ырда чагылдырган. Ал эл акындарынын эң көрүнүктүүсү болуп саналат.",
+    "photo": "photos/8533ecee-1b07-4dae-97ff-3936bc14cf4d_cx0_cy5_cw0_w1080_h608_s.avif",
+    "epoch": "XIX-XX кылым",
+    "language": "kyrgyz",
+    "tags": ""
+  }
+},
+{
+  "model": "writers.writer",
+  "pk": 3,
+  "fields": {
+    "name": "Алыкул Осмонов",
+    "birth_year": 1915,
+    "death_year": 1950,
+    "biography": "Алыкул Осмонов — кыргыз поэзиясынын классиги. Ал Ысык-Көл облусунда туулган. Кыска өмүрүнө карабастан, кыргыз адабиятына зор салым кошкон. Анын ырлары табияттын сулуулугун, мекен сүйүүнү жана адамдын ички дүйнөсүн чагылдырат.",
+    "photo": "photos/images.jpeg",
+    "epoch": "XX кылым",
+    "language": "kyrgyz",
+    "tags": ""
+  }
+},
+{
+  "model": "writers.quote",
+  "pk": 1,
+  "fields": {
+    "writer": 1,
+    "text": "Адам өлөт, бирок анын сөзү өлбөйт."
+  }
+},
+{
+  "model": "writers.quote",
+  "pk": 2,
+  "fields": {
+    "writer": 1,
+    "text": "Эң чоң байлык — акылман достун болушу."
+  }
+},
+{
+  "model": "writers.quote",
+  "pk": 3,
+  "fields": {
+    "writer": 1,
+    "text": "Жашоо — бул күрөш, бирок ал сулуу күрөш."
+  }
+},
+{
+  "model": "writers.quote",
+  "pk": 4,
+  "fields": {
+    "writer": 1,
+    "text": "Адамга эң кыйыны — күн сайын адам болуу."
+  }
+},
+{
+  "model": "writers.quote",
+  "pk": 5,
+  "fields": {
+    "writer": 1,
+    "text": "Биз дүйнөнү өзгөрттүк, дүйнө бизди өзгөрттү."
+  }
+},
+{
+  "model": "writers.quote",
+  "pk": 6,
+  "fields": {
+    "writer": 2,
+    "text": "Ырыс алды — ынтымак."
+  }
+},
+{
+  "model": "writers.quote",
+  "pk": 7,
+  "fields": {
+    "writer": 2,
+    "text": "Күчүң барда иштеп көн."
+  }
+},
+{
+  "model": "writers.quote",
+  "pk": 8,
+  "fields": {
+    "writer": 2,
+    "text": "Көпкөн жигит көп сүйлөйт,\r\nЧечен жигит эп сүйлөйт."
+  }
+},
+{
+  "model": "writers.quote",
+  "pk": 9,
+  "fields": {
+    "writer": 2,
+    "text": "Өтүп кеткен ишиңдин артынан бекер өкүнбө."
+  }
+},
+{
+  "model": "writers.quote",
+  "pk": 10,
+  "fields": {
+    "writer": 2,
+    "text": "Агайынды жаман деп, тууганды кайдан табасың?"
+  }
+},
+{
+  "model": "writers.quote",
+  "pk": 11,
+  "fields": {
+    "writer": 2,
+    "text": "Айткан кебин орундап, туругу болот сөзүндө."
+  }
+},
+{
+  "model": "writers.quote",
+  "pk": 12,
+  "fields": {
+    "writer": 3,
+    "text": "Жашоо — бул күрөш."
+  }
+},
+{
+  "model": "writers.quote",
+  "pk": 13,
+  "fields": {
+    "writer": 3,
+    "text": "Мен кыргызмын, миң жашаган элмин."
+  }
+},
+{
+  "model": "writers.quote",
+  "pk": 14,
+  "fields": {
+    "writer": 3,
+    "text": "Сүйүү — бул жүрөктүн ыры."
+  }
+},
+{
+  "model": "writers.quote",
+  "pk": 15,
+  "fields": {
+    "writer": 3,
+    "text": "Өмүр өтөт, из калат."
+  }
+},
+{
+  "model": "writers.quote",
+  "pk": 16,
+  "fields": {
+    "writer": 3,
+    "text": "Сүйгөн жүрөк өлбөйт."
+  }
+},
+{
+  "model": "writers.work",
+  "pk": 1,
+  "fields": {
+    "writer": 1,
+    "title": "Жамийла",
+    "year": 1958,
+    "genre": "Повесть",
+    "description": ""
+  }
+},
+{
+  "model": "writers.work",
+  "pk": 2,
+  "fields": {
+    "writer": 1,
+    "title": "Ак кеме",
+    "year": 1970,
+    "genre": "Повесть",
+    "description": ""
+  }
+},
+{
+  "model": "writers.work",
+  "pk": 3,
+  "fields": {
+    "writer": 1,
+    "title": "Гүлсарат",
+    "year": 1966,
+    "genre": "Повесть",
+    "description": ""
+  }
+},
+{
+  "model": "writers.work",
+  "pk": 4,
+  "fields": {
+    "writer": 1,
+    "title": "Кылым карытар бир күн",
+    "year": 1980,
+    "genre": "Роман",
+    "description": ""
+  }
+},
+{
+  "model": "writers.work",
+  "pk": 5,
+  "fields": {
+    "writer": 1,
+    "title": "Плаха",
+    "year": 1986,
+    "genre": "Роман",
+    "description": ""
+  }
+}
 ]
