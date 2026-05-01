@@ -19,10 +19,11 @@ def home(request):
 
     if query:
         q = query.lower()
-        writers = [w for w in writers if
+        matched = [w for w in writers if
                    q in w.name.lower() or
                    q in w.biography.lower() or
                    q in w.tags.lower()]
+        writers = sorted(matched, key=lambda w: (0 if q in w.name.lower() else 1))           
 
     if epoch:
         writers = [w for w in writers if epoch.lower() in w.epoch.lower()]
