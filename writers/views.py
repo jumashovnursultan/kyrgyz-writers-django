@@ -18,12 +18,12 @@ def home(request):
     writers = Writer.objects.all()
 
     # Умный поиск — по имени, биографии, тегам
-    if query:
-        writers = writers.filter(
-            Q(name__icontains=query) |
-            Q(biography__icontains=query) |
-            Q(tags__icontains=query)
-        )
+if query:
+    q = query.lower()
+    writers = [w for w in writers if
+               q in w.name.lower() or
+               q in w.biography.lower() or
+               q in w.tags.lower()]
 
     if epoch:
         writers = writers.filter(epoch__icontains=epoch)
