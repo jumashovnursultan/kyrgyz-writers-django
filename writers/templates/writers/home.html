@@ -6,150 +6,146 @@
     <title>Кыргыз жазуучулары</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: #f5f0e8;
-            color: #2c2c2c;
-        }
+        body { font-family: 'Segoe UI', sans-serif; background: #f5f0e8; color: #2c2c2c; }
 
         header {
             background: linear-gradient(135deg, #1a472a, #2d6a4f);
             color: white;
-            padding: 40px 20px;
+            padding: 30px 20px;
             text-align: center;
         }
+        header h1 { font-size: 2.2em; margin-bottom: 6px; letter-spacing: 2px; }
+        header p { font-size: 1em; opacity: 0.85; }
 
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 8px;
-            letter-spacing: 2px;
+        .user-bar {
+            background: #163d24;
+            padding: 10px 30px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.9em;
         }
+        .user-bar a { color: #a8d5b5; text-decoration: none; font-weight: 600; }
+        .user-bar a:hover { color: white; }
+        .user-bar span { color: rgba(255,255,255,0.6); }
 
-        header p {
-            font-size: 1.1em;
-            opacity: 0.85;
-        }
-
-        .search-bar {
+        .search-section {
             background: #2d6a4f;
             padding: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
         }
-
-        .search-bar input, .search-bar select {
-            padding: 10px 16px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1em;
-            width: 250px;
-        }
-
-        .search-bar button {
-            padding: 10px 24px;
-            background: #f4a261;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1em;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .search-bar button:hover { background: #e76f51; }
-
-        .container {
+        .search-row {
             max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
         }
+        .search-row input, .search-row select {
+            padding: 10px 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95em;
+            flex: 1;
+            min-width: 160px;
+        }
+        .btn { padding: 10px 20px; border: none; border-radius: 8px; font-size: 0.95em; cursor: pointer; font-weight: bold; text-decoration: none; display: inline-block; }
+        .btn-search { background: #f4a261; color: white; }
+        .btn-search:hover { background: #e76f51; }
+        .btn-random { background: #e76f51; color: white; }
+        .btn-clear { background: rgba(255,255,255,0.2); color: white; }
+        .btn-clear:hover { background: rgba(255,255,255,0.3); }
 
-        .count {
-            text-align: center;
-            color: #555;
-            margin-bottom: 30px;
-            font-size: 1em;
+        .alphabet-bar {
+            background: #f0ebe0;
+            border-top: 1px solid #ddd6c8;
+            padding: 12px 20px;
         }
+        .alphabet-bar p { font-size: 11px; font-weight: 600; color: #888; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; text-align: center; }
+        .alphabet-inner { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; }
+        .alpha-btn {
+            padding: 5px 10px;
+            background: white;
+            color: #1a472a;
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1.5px solid #1a472a;
+        }
+        .alpha-btn.active { background: #1a472a; color: white; }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
-        }
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+        .count { text-align: center; color: #666; margin-bottom: 24px; font-size: 0.95em; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 22px; }
 
         .card {
             background: white;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 3px 14px rgba(0,0,0,0.08);
             transition: transform 0.2s, box-shadow 0.2s;
             text-decoration: none;
             color: inherit;
             display: block;
+            position: relative;
         }
-
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 24px rgba(0,0,0,0.13); }
 
         .card-photo {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
+            width: 100%; height: 210px;
             background: #e0d6c8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             font-size: 5em;
         }
+        .card-photo img { width: 100%; height: 100%; object-fit: cover; }
 
-        .card-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .card-body { padding: 20px; }
-
-        .card-body h2 {
+        .fav-btn {
+            position: absolute;
+            top: 10px; right: 10px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            border-radius: 50%;
+            width: 36px; height: 36px;
             font-size: 1.2em;
-            margin-bottom: 6px;
-            color: #1a472a;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: transform 0.15s;
         }
+        .fav-btn:hover { transform: scale(1.15); }
 
-        .card-body .years {
-            font-size: 0.9em;
-            color: #888;
-            margin-bottom: 8px;
-        }
-
-        .card-body .epoch {
+        .card-body { padding: 18px; }
+        .card-body h2 { font-size: 1.1em; margin-bottom: 5px; color: #1a472a; }
+        .card-body .years { font-size: 0.85em; color: #999; margin-bottom: 8px; }
+        .tags-row { display: flex; gap: 6px; flex-wrap: wrap; }
+        .tag {
             display: inline-block;
-            background: #e8f5e9;
-            color: #2d6a4f;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: bold;
+            background: #e8f5e9; color: #2d6a4f;
+            padding: 3px 10px; border-radius: 20px;
+            font-size: 0.75em; font-weight: bold;
         }
+        .tag.lang { background: #fff3e0; color: #e65100; }
 
-        .empty {
-            text-align: center;
-            padding: 60px;
-            color: #999;
-            font-size: 1.2em;
-        }
+        .empty { text-align: center; padding: 60px; color: #999; font-size: 1.2em; }
 
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 24px;
             background: #1a472a;
             color: rgba(255,255,255,0.7);
-            margin-top: 60px;
+            margin-top: 50px;
+        }
+        .footer-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
+        .footer-links a {
+            padding: 8px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -160,54 +156,90 @@
     <p>Кыргызстандын улуу жазуучуларынын өмүр баяны</p>
 </header>
 
-<div class="search-bar">
-    <form method="GET" style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
-        <input type="text" name="q" placeholder="Жазуучунун аты..." value="{{ query }}">
+<div class="user-bar">
+    {% if user.is_authenticated %}
+        <span>👤 {{ user.username }}</span>
+        <a href="{% url 'my_favorites' %}">❤️ Сактагандарым</a>
+        <a href="{% url 'logout' %}">Чыгуу</a>
+    {% else %}
+        <a href="{% url 'login' %}">Кирүү</a>
+        <a href="{% url 'register' %}">Катталуу</a>
+    {% endif %}
+</div>
+
+<div class="search-section">
+    <form method="GET" class="search-row">
+        <input type="text" name="q" placeholder="🔍 Аты, биографиясы, тег боюнча..." value="{{ query }}">
         <select name="epoch">
             <option value="">Бардык доор</option>
             {% for e in epochs %}
                 <option value="{{ e }}" {% if e == selected_epoch %}selected{% endif %}>{{ e }}</option>
             {% endfor %}
         </select>
-        <button type="submit">🔍 Издөө</button>
+        <select name="language">
+            <option value="">Бардык тил</option>
+            <option value="kyrgyz" {% if selected_language == 'kyrgyz' %}selected{% endif %}>Кыргызча</option>
+            <option value="russian" {% if selected_language == 'russian' %}selected{% endif %}>Орусча</option>
+            <option value="both" {% if selected_language == 'both' %}selected{% endif %}>Эки тилде</option>
+        </select>
+        <select name="genre">
+            <option value="">Бардык жанр</option>
+            {% for g in genres %}
+                <option value="{{ g }}" {% if g == selected_genre %}selected{% endif %}>{{ g }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-search">Издөө</button>
+        <a href="{% url 'home' %}" class="btn btn-clear">✕</a>
     </form>
-    <a href="{% url 'random_writer' %}" style="
-    padding: 10px 24px;
-    background: #e76f51;
-    color: white;
-    border-radius: 8px;
-    font-size: 1em;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-">🎲 Окуп чык</a>
+</div>
+
+<div class="alphabet-bar">
+    <p>Алфавит боюнча</p>
+    <div class="alphabet-inner">
+        <a href="{% url 'home' %}" class="alpha-btn {% if not selected_letter %}active{% endif %}">Баары</a>
+        {% for letter in letters %}
+        <a href="?letter={{ letter }}" class="alpha-btn {% if selected_letter == letter %}active{% endif %}">{{ letter }}</a>
+        {% endfor %}
+    </div>
 </div>
 
 <div class="container">
-    <p class="count">Жазуучулар саны: <strong>{{ writers|length }}</strong></p>
+    <p class="count">
+        Табылды: <strong>{{ writers|length }}</strong> жазуучу
+        {% if query %} · «{{ query }}» боюнча{% endif %}
+        {% if selected_epoch %} · {{ selected_epoch }}{% endif %}
+        {% if selected_genre %} · {{ selected_genre }}{% endif %}
+    </p>
 
     {% if writers %}
     <div class="grid">
         {% for writer in writers %}
-        <a href="{% url 'writer_detail' writer.pk %}" class="card">
-            <div class="card-photo">
-                {% if writer.photo %}
-                    <img src="{{ writer.photo.url }}" alt="{{ writer.name }}">
-                {% else %}
-                    ✍️
-                {% endif %}
-            </div>
-            <div class="card-body">
-                <h2>{{ writer.name }}</h2>
-                <p class="years">
-                    {{ writer.birth_year }}
-                    {% if writer.death_year %} — {{ writer.death_year }}{% else %} — ...{% endif %}
-                </p>
-                <span class="epoch">{{ writer.epoch }}</span>
-            </div>
-        </a>
+        <div style="position:relative;">
+            <a href="{% url 'writer_detail' writer.pk %}" class="card">
+                <div class="card-photo">
+                    {% if writer.photo %}
+                        <img src="{{ writer.photo.url }}" alt="{{ writer.name }}">
+                    {% else %}
+                        ✍️
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    <h2>{{ writer.name }}</h2>
+                    <p class="years">
+                        {{ writer.birth_year }}{% if writer.death_year %} — {{ writer.death_year }}{% else %} — ...{% endif %}
+                    </p>
+                    <div class="tags-row">
+                        <span class="tag">{{ writer.epoch }}</span>
+                        <span class="tag lang">{{ writer.get_language_display_ky }}</span>
+                    </div>
+                </div>
+            </a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'toggle_favorite' writer.pk %}?next=home" class="fav-btn" title="Сактоо">
+                {% if writer.pk in favorite_ids %}❤️{% else %}🤍{% endif %}
+            </a>
+            {% endif %}
+        </div>
         {% endfor %}
     </div>
     {% else %}
@@ -215,68 +247,14 @@
     {% endif %}
 </div>
 
-<div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-    <div style="padding: 1.5rem 0; background: #f0ebe0; border-top: 1px solid #ddd6c8;">
-        <p style="font-size: 11px; font-weight: 600; color: #888; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; text-align: center;">Алфавит боюнча</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; align-items: center;">
-            <a href="{% url 'home' %}" style="
-                padding: 7px 16px;
-                background: {% if not selected_letter %}#1a472a{% else %}white{% endif %};
-                color: {% if not selected_letter %}white{% else %}#1a472a{% endif %};
-                border-radius: 8px;
-                text-decoration: none;
-                font-size: 13px;
-                font-weight: 600;
-                border: 1.5px solid #1a472a;
-            ">Баары</a>
-
-            <div style="width: 1px; height: 28px; background: #c8c0b0; margin: 0 4px;"></div>
-
-            {% for letter in letters %}
-            <a href="?letter={{ letter }}" style="
-                padding: 7px 12px;
-                background: {% if selected_letter == letter %}#1a472a{% else %}white{% endif %};
-                color: {% if selected_letter == letter %}white{% else %}#1a472a{% endif %};
-                border-radius: 8px;
-                text-decoration: none;
-                font-size: 13px;
-                font-weight: 600;
-                border: 1.5px solid #1a472a;
-            ">{{ letter }}</a>
-            {% endfor %}
-        </div>
-    </div>
-</div>
 <footer>
-    <p>© 2026 Кыргыз жазуучулары — Дипломдук жумуш</p>
-    <div style="text-align:center; margin-top: 20px;">
-    <a href="{% url 'statistics' %}" style="
-        padding: 10px 24px;
-        background: #2d6a4f;
-        color: white;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-    ">📊 Статистика</a>
-    <a href="{% url 'timeline' %}" style="
-    padding: 10px 24px;
-    background: #e76f51;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-left: 10px;
-">📅 Хронология</a>
-<a href="{% url 'about' %}" style="
-    padding: 10px 24px;
-    background: #457b9d;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-left: 10px;
-">ℹ️ Долбоор жөнүндө</a>
-</div>
+    <p>© 2026 Кыргыз жазуучулары — Дипломдук жумуш · Жумашов Нурсултан</p>
+    <div class="footer-links">
+        <a href="{% url 'random_writer' %}" style="background:#e76f51; color:white;">🎲 Кездейсок</a>
+        <a href="{% url 'statistics' %}" style="background:#2d6a4f; color:white;">📊 Статистика</a>
+        <a href="{% url 'timeline' %}" style="background:#457b9d; color:white;">📅 Хронология</a>
+        <a href="{% url 'about' %}" style="background:#6c757d; color:white;">ℹ️ Долбоор жөнүндө</a>
+    </div>
 </footer>
 
 </body>

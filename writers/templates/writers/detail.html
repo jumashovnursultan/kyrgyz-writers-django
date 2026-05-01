@@ -6,35 +6,35 @@
     <title>{{ writer.name }}</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: #f5f0e8;
-            color: #2c2c2c;
-        }
+        body { font-family: 'Segoe UI', sans-serif; background: #f5f0e8; color: #2c2c2c; }
 
         header {
             background: linear-gradient(135deg, #1a472a, #2d6a4f);
             color: white;
-            padding: 20px 40px;
+            padding: 18px 30px;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 16px;
         }
+        header a { color: white; text-decoration: none; font-size: 1.4em; }
+        header h1 { font-size: 1.3em; flex: 1; }
 
-        header a {
+        .fav-btn {
+            padding: 8px 18px;
+            border: 2px solid white;
+            border-radius: 10px;
+            background: transparent;
             color: white;
+            font-size: 0.95em;
+            font-weight: bold;
+            cursor: pointer;
             text-decoration: none;
-            font-size: 1.5em;
+            transition: background 0.2s;
         }
+        .fav-btn:hover { background: rgba(255,255,255,0.2); }
+        .fav-btn.active { background: #e76f51; border-color: #e76f51; }
 
-        header h1 { font-size: 1.4em; }
-
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 900px; margin: 32px auto; padding: 0 20px; }
 
         .profile {
             background: white;
@@ -42,117 +42,92 @@
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             display: flex;
-            gap: 0;
         }
-
         .profile-photo {
-            width: 280px;
-            min-height: 350px;
+            width: 260px; min-height: 320px;
             background: #e0d6c8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 8em;
-            flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 7em; flex-shrink: 0;
         }
+        .profile-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .profile-info { padding: 30px; flex: 1; }
+        .profile-info h1 { font-size: 1.8em; color: #1a472a; margin-bottom: 10px; }
 
-        .profile-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-info {
-            padding: 36px;
-            flex: 1;
-        }
-
-        .profile-info h1 {
-            font-size: 2em;
-            color: #1a472a;
-            margin-bottom: 8px;
-        }
-
-        .meta {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
+        .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
         .badge {
-            background: #e8f5e9;
-            color: #2d6a4f;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: bold;
+            background: #e8f5e9; color: #2d6a4f;
+            padding: 5px 14px; border-radius: 20px;
+            font-size: 0.85em; font-weight: bold;
         }
+        .badge.years { background: #fff3e0; color: #e65100; }
+        .badge.lang { background: #e3f2fd; color: #1565c0; }
 
-        .badge.years {
-            background: #fff3e0;
-            color: #e65100;
-        }
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+        .tag { background: #f5f5f5; color: #666; padding: 3px 10px; border-radius: 20px; font-size: 0.8em; }
 
         .section {
             background: white;
             border-radius: 16px;
-            padding: 28px;
-            margin-top: 24px;
+            padding: 26px;
+            margin-top: 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.06);
         }
-
         .section h2 {
             color: #1a472a;
             margin-bottom: 14px;
-            font-size: 1.2em;
+            font-size: 1.1em;
             border-left: 4px solid #2d6a4f;
             padding-left: 12px;
         }
+        .section p { line-height: 1.8; color: #444; }
 
-        .section p {
-            line-height: 1.8;
-            color: #444;
-        }
-
-        .works-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .works-list li {
-            padding: 10px 0;
+        .work-item {
+            display: flex; gap: 14px;
+            padding: 12px 0;
             border-bottom: 1px solid #f0f0f0;
-            color: #444;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            align-items: flex-start;
+        }
+        .work-item:last-child { border-bottom: none; }
+        .work-icon { font-size: 1.2em; margin-top: 2px; flex-shrink: 0; }
+        .work-title { font-weight: bold; color: #1a472a; margin-bottom: 4px; }
+        .work-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+        .work-year { font-size: 0.82em; color: #888; }
+        .work-genre { background: #e8f5e9; color: #2d6a4f; padding: 2px 10px; border-radius: 20px; font-size: 0.78em; font-weight: bold; }
+
+        blockquote {
+            border-left: 4px solid #2d6a4f;
+            margin: 14px 0;
+            padding: 14px 18px;
+            background: #f0f7f4;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            color: #333;
+            line-height: 1.7;
         }
 
-        .works-list li:last-child { border-bottom: none; }
-
-        .works-list li::before {
-            content: "📖";
-        }
-
-        .back-btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 28px;
-            background: #2d6a4f;
-            color: white;
-            border-radius: 10px;
+        .similar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+        .similar-card {
+            background: #f8f8f8;
+            border-radius: 12px;
+            padding: 14px;
             text-decoration: none;
-            font-weight: bold;
-            transition: background 0.2s;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #eee;
         }
-        
+        .similar-card:hover { transform: translateY(-3px); box-shadow: 0 5px 14px rgba(0,0,0,0.1); }
+        .similar-card h4 { font-size: 0.95em; color: #1a472a; margin-bottom: 4px; }
+        .similar-card p { font-size: 0.8em; color: #888; }
 
-        .back-btn:hover { background: #1a472a; }
+        .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+        .btn { padding: 11px 24px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 0.95em; border: none; cursor: pointer; }
+        .btn-back { background: #2d6a4f; color: white; }
+        .btn-back:hover { background: #1a472a; }
+        .btn-print { background: #f4a261; color: white; }
 
         @media (max-width: 600px) {
             .profile { flex-direction: column; }
-            .profile-photo { width: 100%; height: 250px; }
+            .profile-photo { width: 100%; height: 220px; }
         }
     </style>
 </head>
@@ -161,26 +136,35 @@
 <header>
     <a href="{% url 'home' %}">←</a>
     <h1>{{ writer.name }}</h1>
+    {% if user.is_authenticated %}
+    <a href="{% url 'toggle_favorite' writer.pk %}" class="fav-btn {% if is_favorite %}active{% endif %}">
+        {% if is_favorite %}❤️ Сакталган{% else %}🤍 Сактоо{% endif %}
+    </a>
+    {% endif %}
 </header>
 
 <div class="container">
     <div class="profile">
         <div class="profile-photo">
-            {% if writer.photo %}
-                <img src="{{ writer.photo.url }}" alt="{{ writer.name }}">
-            {% else %}
-                ✍️
-            {% endif %}
+            {% if writer.photo %}<img src="{{ writer.photo.url }}" alt="{{ writer.name }}">
+            {% else %}✍️{% endif %}
         </div>
         <div class="profile-info">
             <h1>{{ writer.name }}</h1>
             <div class="meta">
                 <span class="badge years">
-                    {{ writer.birth_year }}
-                    {% if writer.death_year %} — {{ writer.death_year }}{% else %} — азыркы күн{% endif %}
+                    {{ writer.birth_year }}{% if writer.death_year %} — {{ writer.death_year }}{% else %} — азыркы күн{% endif %}
                 </span>
                 <span class="badge">{{ writer.epoch }}</span>
+                <span class="badge lang">{{ writer.get_language_display_ky }}</span>
             </div>
+            {% if writer.tags %}
+            <div class="tags">
+                {% for tag in writer.tags.split %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
     </div>
 
@@ -190,80 +174,52 @@
     </div>
 
     {% if writer.work_set.all %}
-<div class="section">
-    <h2>📚 Чыгармалары</h2>
-    <div style="display: flex; flex-direction: column; gap: 0; margin-top: 10px;">
+    <div class="section">
+        <h2>📚 Чыгармалары</h2>
         {% for work in writer.work_set.all %}
-        <div style="
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            padding: 14px 0;
-            border-bottom: 1px solid #f0f0f0;
-        ">
-            <span style="font-size: 1.3em; flex-shrink: 0; margin-top: 2px;">📖</span>
-            <div style="flex: 1;">
-                <div style="font-weight: bold; color: #1a472a; font-size: 1em; margin-bottom: 4px;">{{ work.title }}</div>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 4px;">
-                    {% if work.year %}
-                    <span style="font-size: 0.82em; color: #888;">{{ work.year }}-жыл</span>
-                    {% endif %}
-                    {% if work.genre %}
-                    <span style="
-                        background: #e8f5e9;
-                        color: #2d6a4f;
-                        padding: 2px 10px;
-                        border-radius: 20px;
-                        font-size: 0.78em;
-                        font-weight: bold;
-                    ">{{ work.genre }}</span>
-                    {% endif %}
+        <div class="work-item">
+            <span class="work-icon">📖</span>
+            <div>
+                <div class="work-title">{{ work.title }}</div>
+                <div class="work-meta">
+                    {% if work.year %}<span class="work-year">{{ work.year }}-жыл</span>{% endif %}
+                    {% if work.genre %}<span class="work-genre">{{ work.genre }}</span>{% endif %}
                 </div>
-                {% if work.description %}
-                <div style="font-size: 0.88em; color: #555; line-height: 1.6;">{{ work.description }}</div>
-                {% endif %}
+                {% if work.description %}<p style="font-size:0.88em;color:#555;margin-top:6px;line-height:1.6;">{{ work.description }}</p>{% endif %}
             </div>
         </div>
         {% endfor %}
     </div>
-</div>
-{% endif %}
+    {% endif %}
 
-    
     {% if writer.quotes.all %}
-<div class="section">
-    <h2>💬 Цитаталары</h2>
-    {% for quote in writer.quotes.all %}
-    <blockquote style="
-        border-left: 4px solid #2d6a4f;
-        margin: 16px 0;
-        padding: 16px 20px;
-        background: #f0f7f4;
-        border-radius: 0 12px 12px 0;
-        font-style: italic;
-        color: #333;
-        line-height: 1.7;
-        font-size: 1.05em;
-    ">
-        "{{ quote.text }}"
-    </blockquote>
-    {% endfor %}
-</div>
-<a href="{% url 'home' %}" class="back-btn">← Артка кайтуу</a>
-{% endif %}
-    <button onclick="window.print()" style="
-    display: inline-block;
-    margin-top: 30px;
-    margin-left: 12px;
-    padding: 12px 28px;
-    background: #f4a261;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 1em;
-    font-weight: bold;
-    cursor: pointer;
-">🖨️ Басып чыгаруу</button>
+    <div class="section">
+        <h2>💬 Цитаталары</h2>
+        {% for quote in writer.quotes.all %}
+        <blockquote>"{{ quote.text }}"</blockquote>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if similar %}
+    <div class="section">
+        <h2>🔗 Окшош жазуучулар</h2>
+        <div class="similar-grid">
+            {% for s in similar %}
+            <a href="{% url 'writer_detail' s.pk %}" class="similar-card">
+                <h4>{{ s.name }}</h4>
+                <p>{{ s.epoch }}</p>
+                <p style="margin-top:4px;">{{ s.get_language_display_ky }}</p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="actions">
+        <a href="{% url 'home' %}" class="btn btn-back">← Артка кайтуу</a>
+        <button onclick="window.print()" class="btn btn-print">🖨️ Басып чыгаруу</button>
+    </div>
 </div>
 
 </body>
